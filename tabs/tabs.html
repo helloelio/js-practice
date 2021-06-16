@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./tabs.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="tabs">
+            <div role="tablist" aria-label="Programming Languages">
+                <button role="tab" selected="true" id="js">
+                    etude
+                </button>
+                <button role="tab" selected="false" id="ruby">portret
+                </button>
+                <button role="tab" selected="false" id="php">
+                    PHP
+                </button>
+            </div>
+            <div role="tabpanel" aria-labelledby="js">
+                <h1>Etude</h1>
+                <div class="gallery etude">
+                    <div class="gallery__item"><img class="image" src="./img/work-test.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/work-test.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/work-test.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/work-test.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/work-test.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/work-test.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/work-test.jpg" alt=""></div>
+                </div>
+            </div>
+            <div role="tabpanel" aria-labelledby="ruby" hidden>
+                <h1>Portret</h1>
+                <div class="gallery portret">
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                    <div class="gallery__item"><img class="image" src="./img/portret.jpg" alt=""></div>
+                </div>
+            </div>
+            <div role="tabpanel" aria-labelledby="php" hidden>
+                <h1>PHP is great!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolorem fuga fugit expedita cum
+                    repellat
+                    non atque quisquam voluptatum tenetur porro modi autem, placeat consectetur praesentium magni soluta
+                    delectus aperiam.</p>
+            </div>
+        </div>
+        <div class="modal">
+            <img class="modal-img" src="" alt="">
+            <span class="close">×</span>
+        </div>
+    </div>
+</body>
+<script src="./tabs.js"></script>
+
+</html>
