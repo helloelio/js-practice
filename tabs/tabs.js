@@ -45,13 +45,16 @@ const images = document.querySelectorAll('.image');
 const modal = document.querySelector('.modal');
 const closeBtn = document.querySelector('.close');
 const modalImg = document.querySelector('.modal-img');
+const desc = document.querySelector('.alt');
 
 images.forEach((img) => {
+    const alt = img.alt;
     img.addEventListener('click', () => {
         body.classList.add('scroll-disable');
         modal.style.display = ' flex';
         modalImg.src = img.src;
         modalImg.style.animation = 'fromHide .3s';
+        desc.innerHTML = alt;
     });
 });
 let closeModal = () => {
