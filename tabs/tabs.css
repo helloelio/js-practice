@@ -87,20 +87,23 @@ div[aria-labelledby='php'] {
 /* modal */
 .modal {
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 50px;
+    height: 100%;
+
     background-color: rgba(0, 0, 0, 0.9);
     transition: 0.3s ease;
 }
 .modal-img {
+    margin-top: -50px;
     max-width: 60%;
-    max-height: 100%;
+    max-height: 70%;
 }
 .close {
     color: white;
@@ -109,6 +112,11 @@ div[aria-labelledby='php'] {
     top: 20px;
     right: 30px;
     cursor: pointer;
+}
+.alt {
+    color: white;
+    margin-top: 10px;
+    font-size: 1.5em;
 }
 @keyframes fromHide {
     0% {
