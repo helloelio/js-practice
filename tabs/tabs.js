@@ -7,6 +7,39 @@ const js = document.querySelector('#js');
 const ruby = document.querySelector('#ruby');
 const php = document.querySelector('#php');
 
+let etude = document.querySelector('.etude');
+let portret = document.querySelector('.portret');
+let sketch = document.querySelector('.sketches');
+
+for (let i = 1; i < 10; i++) {
+    let etudeItem = document.createElement('div');
+    etudeItem.classList.add('gallery__item');
+    let etudeImg = document.createElement('img');
+    etudeImg.classList.add('image');
+    etudeImg.src = './img/work-test.jpg';
+    etudeImg.alt = `etude ${i} | 120x140 | 10000$`;
+    etudeItem.appendChild(etudeImg);
+    etude.appendChild(etudeItem);
+    //
+    let portretItem = document.createElement('div');
+    portretItem.classList.add('gallery__item');
+    let portretImg = document.createElement('img');
+    portretImg.classList.add('image');
+    portretImg.src = './img/portret.jpg';
+    portretImg.alt = `portret ${i} | 60x80 | 12000$`;
+    portretItem.appendChild(portretImg);
+    portret.appendChild(portretItem);
+    //
+    let sketchItem = document.createElement('div');
+    sketchItem.classList.add('gallery__item');
+    let sketchImg = document.createElement('img');
+    sketchImg.classList.add('image');
+    sketchImg.src = './img/sketch.jpg';
+    sketchImg.alt = `sketch ${i} | 60x80 | 12000$`;
+    sketchItem.appendChild(sketchImg);
+    sketch.appendChild(sketchItem);
+}
+
 let handleTabClick = (event) => {
     // hide all tab panels
     tabPanels.forEach((panel) => {
