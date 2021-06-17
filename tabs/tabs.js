@@ -1,6 +1,7 @@
 const body = document.querySelector('body');
 const wrapper = document.querySelector('.wrapper');
 const tabs = document.querySelector('.tabs');
+const tabList = document.querySelector('.tablist');
 const tabButtons = document.querySelectorAll('[role="tab"]');
 const tabPanels = document.querySelectorAll('[role="tabpanel"]');
 
@@ -60,14 +61,20 @@ let handleTabClick = (event) => {
             body.classList.add('yellow');
             body.classList.remove('red');
             body.classList.remove('blue');
+            // js.remove();
+            // tabList.appendChild(js);
         } else if (arr[1].attributes.selected.nodeValue == 'true') {
             body.classList.add('red');
             body.classList.remove('yellow');
             body.classList.remove('blue');
+            // ruby.remove();
+            // tabList.appendChild(ruby)
         } else if (arr[2].attributes.selected.nodeValue == 'true') {
             body.classList.add('blue');
             body.classList.remove('red');
             body.classList.remove('yellow');
+            // php.remove();
+            // tabList.appendChild(php)
         }
     }
     tabPanel.hidden = false;
@@ -98,7 +105,8 @@ let closeModal = () => {
 closeBtn.addEventListener('click', closeModal);
 
 //
-let $ERROR_BUTTON = document.createElement('h1');
+let $ERROR_WINDOW = document.querySelector('.error-window');
+let $ERROR_BUTTON = document.createElement('button');
 let isAdmin;
 let checkWord = 'love';
 
@@ -106,11 +114,9 @@ let checkAdmin = () => {
     isAdmin = prompt('Password');
     let showAdminBar = () => {
         if (isAdmin == null) {
-            wrapper.remove();
-            body.style.background = 'red';
-            body.style.height = '100vh';
-            body.style.display = 'flex';
-            body.style.flexDirection = 'column';
+            wrapper.style.display = 'none';
+            $ERROR_WINDOW.style.display = 'flex';
+            $ERROR_WINDOW.style.flexDirection = 'column';
             let $ERROR = document.createElement('h1');
             $ERROR.textContent = 'THIS WRONG PASSWORD';
             $ERROR.style.color = 'red';
@@ -118,17 +124,17 @@ let checkAdmin = () => {
             $ERROR_BUTTON.classList.add('error-button');
             $ERROR_BUTTON.textContent = 'TRY AGAIN';
             $ERROR.classList.add('error');
-            body.appendChild($ERROR);
-            body.appendChild($ERROR_BUTTON);
+            $ERROR_WINDOW.appendChild($ERROR);
+            $ERROR_WINDOW.appendChild($ERROR_BUTTON);
         }
         if (isAdmin.toUpperCase() == checkWord.toUpperCase()) {
             alert('LOVE U TOO');
+            wrapper.style.display = 'block';
+            $ERROR_WINDOW.style.display = 'none';
         } else {
-            wrapper.remove();
-            body.style.background = 'red';
-            body.style.height = '100vh';
-            body.style.display = 'flex';
-            body.style.flexDirection = 'column';
+            wrapper.style.display = 'none';
+            $ERROR_WINDOW.style.display = 'flex';
+            $ERROR_WINDOW.style.flexDirection = 'column';
             let $ERROR = document.createElement('h1');
             $ERROR.textContent = 'THIS WRONG PASSWORD';
             $ERROR.style.color = 'red';
@@ -136,8 +142,8 @@ let checkAdmin = () => {
             $ERROR_BUTTON.classList.add('error-button');
             $ERROR_BUTTON.textContent = 'TRY AGAIN';
             $ERROR.classList.add('error');
-            body.appendChild($ERROR);
-            body.appendChild($ERROR_BUTTON);
+            $ERROR_WINDOW.appendChild($ERROR);
+            $ERROR_WINDOW.appendChild($ERROR_BUTTON);
         }
     };
     showAdminBar();
