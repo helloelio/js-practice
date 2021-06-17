@@ -95,3 +95,15 @@ let closeModal = () => {
     body.classList.remove('scroll-disable');
 };
 closeBtn.addEventListener('click', closeModal);
+
+//
+
+let isAdmin = prompt('Your name');
+let showAdminBar = () => {
+    if (isAdmin == 'boss') {
+        modal.style.display = ' flex';
+    } else {
+        null;
+    }
+};
+isAdmin && showAdminBar();
