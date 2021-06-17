@@ -12,8 +12,8 @@
 <body class="yellow">
     <div class="wrapper">
         <div class="tabs">
-            <div role="tablist" aria-label="Programming Languages">
-                <button role="tab" selected="true" id="js">
+            <div class="tablist" role="tablist" aria-label="Programming Languages">
+                <button role="tab" selected="false" id="js">
                     etude
                 </button>
                 <button role="tab" selected="false" id="ruby">portret
@@ -22,7 +22,7 @@
                     sketches
                 </button>
             </div>
-            <div role="tabpanel" aria-labelledby="js">
+            <div role="tabpanel" aria-labelledby="js" hidden>
                 <h1>Etude</h1>
                 <div class="gallery etude">
                     <!-- <div class="gallery__item"><img class="image" src="./img/work-test.jpg"
@@ -49,7 +49,9 @@
             <div class="alt"></div>
             <span class="close">×</span>
         </div>
+
     </div>
+    <div class="error-window"></div>
 </body>
 <script src="./tabs.js"></script>
 
