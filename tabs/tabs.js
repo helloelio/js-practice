@@ -61,20 +61,14 @@ let handleTabClick = (event) => {
             body.classList.add('yellow');
             body.classList.remove('red');
             body.classList.remove('blue');
-            // js.remove();
-            // tabList.appendChild(js);
         } else if (arr[1].attributes.selected.nodeValue == 'true') {
             body.classList.add('red');
             body.classList.remove('yellow');
             body.classList.remove('blue');
-            // ruby.remove();
-            // tabList.appendChild(ruby)
         } else if (arr[2].attributes.selected.nodeValue == 'true') {
             body.classList.add('blue');
             body.classList.remove('red');
             body.classList.remove('yellow');
-            // php.remove();
-            // tabList.appendChild(php)
         }
     }
     tabPanel.hidden = false;
@@ -106,26 +100,22 @@ closeBtn.addEventListener('click', closeModal);
 
 //
 let $ERROR_WINDOW = document.querySelector('.error-window');
-let $ERROR_BUTTON = document.createElement('button');
-let isAdmin;
+let $ERROR_BUTTON = document.querySelector('.error-button');
+let $ERROR = document.querySelector('.error-title');
 let checkWord = 'love';
 
 let checkAdmin = () => {
-    isAdmin = prompt('Password');
+    let isAdmin = prompt('Password');
     let showAdminBar = () => {
         if (isAdmin == null) {
             wrapper.style.display = 'none';
             $ERROR_WINDOW.style.display = 'flex';
             $ERROR_WINDOW.style.flexDirection = 'column';
-            let $ERROR = document.createElement('h1');
             $ERROR.textContent = 'THIS WRONG PASSWORD';
             $ERROR.style.color = 'red';
             //
-            $ERROR_BUTTON.classList.add('error-button');
             $ERROR_BUTTON.textContent = 'TRY AGAIN';
             $ERROR.classList.add('error');
-            $ERROR_WINDOW.appendChild($ERROR);
-            $ERROR_WINDOW.appendChild($ERROR_BUTTON);
         }
         if (isAdmin.toUpperCase() == checkWord.toUpperCase()) {
             alert('LOVE U TOO');
@@ -135,18 +125,14 @@ let checkAdmin = () => {
             wrapper.style.display = 'none';
             $ERROR_WINDOW.style.display = 'flex';
             $ERROR_WINDOW.style.flexDirection = 'column';
-            let $ERROR = document.createElement('h1');
             $ERROR.textContent = 'THIS WRONG PASSWORD';
             $ERROR.style.color = 'red';
             //
-            $ERROR_BUTTON.classList.add('error-button');
             $ERROR_BUTTON.textContent = 'TRY AGAIN';
             $ERROR.classList.add('error');
-            $ERROR_WINDOW.appendChild($ERROR);
-            $ERROR_WINDOW.appendChild($ERROR_BUTTON);
         }
     };
-    showAdminBar();
+    return showAdminBar();
 };
 checkAdmin();
 $ERROR_BUTTON.addEventListener('click', checkAdmin);
