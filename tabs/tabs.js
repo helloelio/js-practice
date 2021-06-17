@@ -105,7 +105,7 @@ let $ERROR = document.querySelector('.error-title');
 let checkWord = 'love';
 
 let checkAdmin = () => {
-    let isAdmin = prompt('Password');
+    const isAdmin = prompt('Password');
     let showAdminBar = () => {
         if (isAdmin == null) {
             wrapper.style.display = 'none';
