@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 body {
+    font-family: 'Do Hyeon', sans-serif;
     background: #e0e0e0;
     margin: 0 auto;
     display: flex;
@@ -49,6 +50,7 @@ div[role='tablist'] {
     grid-gap: 10px;
 }
 button {
+    font-family: 'Do Hyeon', sans-serif;
     background: #e0e0e0;
     color: rgba(0, 0, 0, 0.7);
     border: 1px solid black;
@@ -149,6 +151,9 @@ div[aria-labelledby='php'] {
     font-size: 3.5em;
     text-align: center;
     padding: 10px;
+}
+.error-title{
+    fs
 }
 .error-button {
     background-color: red;
