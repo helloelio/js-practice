@@ -1,4 +1,5 @@
 const body = document.querySelector('body');
+const wrapper = document.querySelector('.wrapper');
 const tabs = document.querySelector('.tabs');
 const tabButtons = document.querySelectorAll('[role="tab"]');
 const tabPanels = document.querySelectorAll('[role="tabpanel"]');
@@ -98,12 +99,19 @@ closeBtn.addEventListener('click', closeModal);
 
 //
 
-let isAdmin = prompt('Your name');
+let isAdmin = prompt('Password');
 let showAdminBar = () => {
-    if (isAdmin == 'boss') {
-        modal.style.display = ' flex';
+    if (isAdmin == 'love') {
+        alert('you are welcome');
     } else {
-        null;
+        wrapper.remove();
+        body.style.height = '100vh';
+        let $ERROR = document.createElement('h1');
+        $ERROR.textContent = 'THIS WRONG PASSWORD';
+        $ERROR.classList.add('error');
+        $ERROR.style.fontSize = '5em';
+        body.style.background = 'red';
+        body.appendChild($ERROR);
     }
 };
 isAdmin && showAdminBar();
