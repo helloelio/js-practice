@@ -152,9 +152,8 @@ div[aria-labelledby='php'] {
     text-align: center;
     padding: 10px;
 }
-.error-title{
-    fs
-}
+/* .error-title {
+} */
 .error-button {
     background-color: red;
     color: black;
