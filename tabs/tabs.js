@@ -117,7 +117,10 @@ let checkAdmin = () => {
             $ERROR_BUTTON.textContent = 'TRY AGAIN';
             $ERROR.classList.add('error');
         }
-        if (isAdmin.toUpperCase() == checkWord.toUpperCase()) {
+        if (
+            isAdmin != null &&
+            isAdmin.toUpperCase() == checkWord.toUpperCase()
+        ) {
             alert('LOVE U TOO');
             wrapper.style.display = 'block';
             $ERROR_WINDOW.style.display = 'none';
