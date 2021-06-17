@@ -98,20 +98,49 @@ let closeModal = () => {
 closeBtn.addEventListener('click', closeModal);
 
 //
+let $ERROR_BUTTON = document.createElement('h1');
+let isAdmin;
+let checkWord = 'love';
 
-let isAdmin = prompt('Password');
-let showAdminBar = () => {
-    if (isAdmin == 'love') {
-        alert('you are welcome');
-    } else {
-        wrapper.remove();
-        body.style.height = '100vh';
-        let $ERROR = document.createElement('h1');
-        $ERROR.textContent = 'THIS WRONG PASSWORD';
-        $ERROR.classList.add('error');
-        $ERROR.style.fontSize = '5em';
-        body.style.background = 'red';
-        body.appendChild($ERROR);
-    }
+let checkAdmin = () => {
+    isAdmin = prompt('Password');
+    let showAdminBar = () => {
+        if (isAdmin == null) {
+            wrapper.remove();
+            body.style.background = 'red';
+            body.style.height = '100vh';
+            body.style.display = 'flex';
+            body.style.flexDirection = 'column';
+            let $ERROR = document.createElement('h1');
+            $ERROR.textContent = 'THIS WRONG PASSWORD';
+            $ERROR.style.color = 'red';
+            //
+            $ERROR_BUTTON.classList.add('error-button');
+            $ERROR_BUTTON.textContent = 'TRY AGAIN';
+            $ERROR.classList.add('error');
+            body.appendChild($ERROR);
+            body.appendChild($ERROR_BUTTON);
+        }
+        if (isAdmin.toUpperCase() == checkWord.toUpperCase()) {
+            alert('LOVE U TOO');
+        } else {
+            wrapper.remove();
+            body.style.background = 'red';
+            body.style.height = '100vh';
+            body.style.display = 'flex';
+            body.style.flexDirection = 'column';
+            let $ERROR = document.createElement('h1');
+            $ERROR.textContent = 'THIS WRONG PASSWORD';
+            $ERROR.style.color = 'red';
+            //
+            $ERROR_BUTTON.classList.add('error-button');
+            $ERROR_BUTTON.textContent = 'TRY AGAIN';
+            $ERROR.classList.add('error');
+            body.appendChild($ERROR);
+            body.appendChild($ERROR_BUTTON);
+        }
+    };
+    showAdminBar();
 };
-isAdmin && showAdminBar();
+checkAdmin();
+$ERROR_BUTTON.addEventListener('click', checkAdmin);
