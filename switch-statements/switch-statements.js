@@ -1,4 +1,8 @@
 const sonic = document.querySelector('.sonic');
+let jump = 'jump 1s';
+let disableJump = () => {
+    jump = '';
+};
 let x = 0;
 let y = 0;
 let rotate = 0;
@@ -50,17 +54,19 @@ let handleKeyDown = (event) => {
     switch (event.key) {
         case 'ArrowUp':
             y = y - 1;
+
             break;
         case 'ArrowDown':
             y = y + 1;
+
             break;
         case 'ArrowLeft':
             x = x - 1;
             flipped = true;
             break;
         case 'ArrowRight' || rightButtonClick:
-            flipped = false;
             x = x + 1;
+            flipped = false;
             break;
         default:
             console.log('That is not a valid move');
@@ -73,6 +79,7 @@ let handleKeyDown = (event) => {
     --x: ${x * speed}px;
     --y: ${y * speed}px;
     --rotate: ${rotate}deg;
+    --anim: ${jump}
   `
     );
     console.log(x, y);
