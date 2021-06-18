@@ -4,8 +4,8 @@ body {
     background-repeat: no-repeat;
     background-repeat: repeat-x;
     background-position-y: -100px;
-    overflow-x: auto;
     background-color: #4169e1;
+    overflow-x: auto;
 }
 button {
     background: none;
@@ -18,7 +18,13 @@ button {
     height: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    transition: 0.3s ease;
+}
+button:active {
+    opacity: 0.3;
+    background: white;
+    color: black;
+    transition: 0.1s ease;
 }
 .sonic {
     position: absolute;
@@ -62,4 +68,8 @@ button {
     bottom: 40px;
     left: 55px;
     font-size: 2em;
+}
+/*  */
+.disable-dbl-tap-zoom {
+    touch-action: manipulation;
 }
