@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-const person = {
+const person = new Object({
   name: 'gleb',
   lasName: 'medvedev',
   age: 24,
@@ -14,6 +14,7 @@ const person = {
     gulp: true,
     webpack: true,
   },
-};
-console.log(body);
-body.innerHTML = JSON.stringify(person);
+});
+const propertyCheck = prompt('what you want to check');
+console.log(propertyCheck);
+console.log(person[propertyCheck]);
