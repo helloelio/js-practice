@@ -1,7 +1,7 @@
 const body = document.querySelector('body');
 const person = new Object({
   name: 'gleb',
-  lasName: 'medvedev',
+  lastName: 'medvedev',
   age: 24,
   city: 'Penza',
   job: 'frontend developer',
@@ -15,6 +15,8 @@ const person = new Object({
     webpack: true,
   },
 });
+
+delete person.city;
 const propertyCheck = prompt('what you want to check');
 console.log(propertyCheck);
 console.log(person[propertyCheck]);
