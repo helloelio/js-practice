@@ -14,6 +14,9 @@ const person = new Object({
     gulp: true,
     webpack: true,
   },
+  sayHello: function (greeting = 'Hey') {
+    return `${greeting} ${this.name}`;
+  },
 });
 
 delete person.city;
