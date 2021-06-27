@@ -19,7 +19,7 @@ body {
 }
 .banner-block {
   display: flex;
-  background-image: url('./img/banner.gif');
+  background-image: url('./intervals-img/banner.gif');
   background-position: center;
   background-size: 100%;
   justify-content: center;
